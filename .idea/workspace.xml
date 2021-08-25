@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="97c1c28d-c4e0-49fc-a9ce-987319196738" name="Changes" comment="Dto">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/unbosque/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/model/Animal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/unbosque/persistence/OperacionArchivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/persistence/OperacionArchivo.java" afterDir="false" />
+    <list default="true" id="97c1c28d-c4e0-49fc-a9ce-987319196738" name="Changes" comment="leer csv y dto completo">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/P/OperacionArchivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/P/OperacionArchivo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +41,16 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Eclipse\EjemploCSV.zip_expanded\EjemploCSV\Data" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Usuario\git\Taller1-Programacion2\Data" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="edu.unbosque.model" />
+      <recent name="P" />
       <recent name="edu.unbosque.persistence" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.OperacionArchivo">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="co.edu.unbosque.main.Main" />
       <module name="EjemploCSV.zip_expanded" />
@@ -63,8 +64,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OperacionArchivo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="P.OperacionArchivo" />
+      <module name="Taller1-Programacion2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="P.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.OperacionArchivo" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -85,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629508052471</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="leer csv y dto completo">
+      <created>1629757392528</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1629757392528</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -109,6 +131,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="object" />
     <MESSAGE value="Dto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dto" />
+    <MESSAGE value="leer csv y dto completo" />
+    <option name="LAST_COMMIT_MESSAGE" value="leer csv y dto completo" />
   </component>
 </project>

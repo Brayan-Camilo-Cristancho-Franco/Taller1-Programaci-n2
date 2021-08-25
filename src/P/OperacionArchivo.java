@@ -36,11 +36,13 @@ public class OperacionArchivo {
         ArrayList<AnimalesDto> animales = new ArrayList<>();
         BufferedReader lectura = null;
         try {
-            lectura = new BufferedReader(new FileReader("./Taller1-Programacion2/Data/pets-citizens.csv"));
+            lectura = new BufferedReader(new FileReader("./Data/pets-citizens.csv"));
             String linea = lectura.readLine();
             long aux=0;
+
             while (linea != null) {
                 aux++;
+
                 System.out.println(linea+"entro"+aux);
 
                 String temp[] = linea.split(";");
@@ -58,6 +60,6 @@ public class OperacionArchivo {
         }
 
     }
-    }
+}
 
 
