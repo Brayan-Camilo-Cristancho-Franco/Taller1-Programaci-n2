@@ -1,6 +1,7 @@
 package persistence;
 
 import edu.unbosque.AnimalesDto;
+import edu.unbosque.model.EmptyAttributeException;
 import edu.unbosque.model.IdentifierExistsException;
 
 import java.io.IOException;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 
 public class ManagerDao {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, EmptyAttributeException, IdentifierExistsException {
 
         ManagerDao ma = new ManagerDao();
         ma.assingId();
@@ -19,34 +20,57 @@ public class ManagerDao {
 
     private OperacionArchivo operacion;
 
-    public void assingId() {
-        String id="";
+    public ManagerDao() {
+        animales = new ArrayList<>();
+        operacion = new OperacionArchivo();
+    }
+
+    public void assingId() throws EmptyAttributeException, IOException, IdentifierExistsException {
+        animales = operacion.leerCsv();
+        String id = "";
+        int cont = 0;
         char c, d;
-        AnimalesDto nuevo = new AnimalesDto(, 900, "CANINO", "HEMBRA", "GRANDE", true, "Usaquen");
-        animales.add(nuevo);
+
         for (int i = 0; i < animales.size(); i++) {
 
             if (animales.get(i).getSize() == "MUY GRANDE") {
                 animales.get(i).setSize("GRANDE");
             }
-         //   id = animales.get(i).getMicrochip().charAt(13) + "" + animales.get(i).getMicrochip().charAt(14) + "-" + animales.get(i).getSpecies().charAt(0) + animales.get(i).getSex().charAt(0) + animales.get(i).getSize().charAt(0) + animales.get(i).isPotentDangerous();
 
-            if (id.charAt(7) == 'I') {
 
-                id = id.replace("S", "T");
-                id = id.replace("I", "");
+            id = String.valueOf(animales.get(i).getMicrochip()).charAt(String.valueOf(animales.get(i).getMicrochip()).length() - 2) + "" + String.valueOf(animales.get(i).getMicrochip()).charAt(String.valueOf(animales.get(i).getMicrochip()).length() - 1) + "-" + animales.get(i).getSpecies().charAt(0) + animales.get(i).getSex().charAt(0) + animales.get(i).getSize().charAt(0) + String.valueOf(animales.get(i).isPotentDangerous());
+
+            if (id.charAt(7) == 't') {
+
+                id = id.replace("t", "T");
+                id = id.replace("r", "");
+                id = id.replace("u", "");
+                id = id.replace("e", "");
             } else {
-                id = id.replace("N", "F");
-                id = id.replace("O", "");
+                id = id.replace("f", "F");
+                id = id.replace("a", "");
+                id = id.replace("l", "");
+                id = id.replace("s", "");
+                id = id.replace("e", "");
+
+
             }
-           // animales.get(i).setId(id);
+            animales.get(i).setId(id);
+
             for (int j = 0; j < animales.size(); j++) {
                 try {
-                    //  if (animales.get(i).getId() == animales.get(j).getId()) {
-                    //   nuevoid= animales.get(i).get
-                    throw new IdentifierExistsException();
+                    if (animales.get(i).getId().equals(animales.get(j).getId()) == true) {
+                        cont++;
+                    }
+
+                    if (cont > 1) {
+
+                        throw new IdentifierExistsException();
+
+                    }
+
                 } catch (IdentifierExistsException e) {
-                    e.printStackTrace();
+
                     System.out.println("El id ya ha sido generado");
 
                 }

@@ -2,7 +2,7 @@ package edu.unbosque;
 
 public class AnimalesDto {
 
-    private int id;
+    private String id;
     private long microchip;
     private String species;
     private String sex;
@@ -10,7 +10,7 @@ public class AnimalesDto {
     private boolean potentDangerous;
     private String neighborhood;
 
-    public AnimalesDto(int id, long microchip, String species, String sex, String size, boolean potentDangerous, String neighborhood) {
+    public AnimalesDto(String id, long microchip, String species, String sex, String size, boolean potentDangerous, String neighborhood) {
         this.id = id;
         this.microchip = microchip;
         this.species = species;
@@ -34,11 +34,11 @@ public class AnimalesDto {
                 '}';
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
