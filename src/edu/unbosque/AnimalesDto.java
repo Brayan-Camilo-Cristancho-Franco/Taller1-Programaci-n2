@@ -2,15 +2,15 @@ package edu.unbosque;
 
 public class AnimalesDto {
 
-    private String id;
-    private String microchip;
+    private int id;
+    private long microchip;
     private String species;
     private String sex;
     private String size;
-    private String potentDangerous;
+    private boolean potentDangerous;
     private String neighborhood;
 
-    public AnimalesDto(String id, String microchip, String species, String sex, String size, String potentDangerous, String neighborhood) {
+    public AnimalesDto(int id, long microchip, String species, String sex, String size, boolean potentDangerous, String neighborhood) {
         this.id = id;
         this.microchip = microchip;
         this.species = species;
@@ -34,19 +34,19 @@ public class AnimalesDto {
                 '}';
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getMicrochip() {
+    public Long getMicrochip() {
         return microchip;
     }
 
-    public void setMicrochip(String microchip) {
+    public void setMicrochip(Long microchip) {
         this.microchip = microchip;
     }
 
@@ -74,11 +74,11 @@ public class AnimalesDto {
         this.size = size;
     }
 
-    public String isPotentDangerous() {
+    public Boolean isPotentDangerous() {
         return potentDangerous;
     }
 
-    public void setPotentDangerous(String potentDangerous) {
+    public void setPotentDangerous(Boolean potentDangerous) {
         this.potentDangerous = potentDangerous;
     }
 
