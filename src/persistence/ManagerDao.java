@@ -13,9 +13,10 @@ public class ManagerDao {
 
         ManagerDao ma = new ManagerDao();
         //System.out.println("las localidades correctas son: USAQUEN");
-        ma.countByNeighborhoo("USAQUEN");
+        //ma.countByNeighborhoo("USAQUEN");
         //ma.countBySpecies();
         //ma.assingId();
+        ma.findByMultipleFields(20, "TOP", null, "HEMBRA", null, null, "USAQUEN");
 
     }
 
@@ -149,35 +150,111 @@ public class ManagerDao {
         if (aux == false) {
 
             System.out.println("La localidad no está bien escrita o no está dentro de la lista");
-        }else{
+        } else {
 
-            System.out.println(neighborhoo+" son:"+cont);
+            System.out.println(neighborhoo + " son:" + cont);
         }
 
 
     }
 
-    public void findByMultipleFields(String id) {
+    public ArrayList<AnimalesDto> findByMultipleFields(int n, String position, String species, String sex, String size, Boolean potentDangerous, String neighborhood) throws EmptyAttributeException, IOException {
+        animales = operacion.leerCsv();
+        ArrayList<AnimalesDto> busqueda = new ArrayList<>();
 
 
-    }
+        if (species != null) {
+            for (int i = 0; i < animales.size(); i++) {
+                if (species.equals(animales.get(i).getSpecies()) == true) {
+                    busqueda.add(animales.get(i));
+                }
+            }
+        }
+        if (sex != null) {
+            if (species == null) {
+                for (int i = 0; i < animales.size(); i++) {
+                    if (sex.equals(animales.get(i).getSex()) == true) {
+                        busqueda.add(animales.get(i));
+                    }
+                }
 
-    public void modificarSize(String id, String nuevoSize) {
+            } else {
+                for (int i = 0; i < busqueda.size(); i++) {
+                    if (sex.equals(busqueda.get(i).getSex()) == false) {
+                        busqueda.remove(i);
+                    }
+                }
+            }
+        }
+        if (size != null) {
+            if (species == null && sex == null) {
+                for (int i = 0; i < animales.size(); i++) {
+                    if (size.equals(animales.get(i).getSize()) == true) {
+                        busqueda.add(animales.get(i));
+                    }
+                }
+            } else {
+                for (int i = 0; i < busqueda.size(); i++) {
+                    if (size.equals(busqueda.get(i).getSize()) == false) {
+                        busqueda.remove(i);
+                    }
+                }
+            }
+        }
+        if (potentDangerous != null) {
+            if (species == null && sex == null && size == null) {
+                for (int i = 0; i < animales.size(); i++) {
+                    if (potentDangerous == animales.get(i).isPotentDangerous()) {
+                        busqueda.add(animales.get(i));
+                    }
+                }
+            } else {
+                for (int i = 0; i < busqueda.size(); i++) {
+                    if (potentDangerous != busqueda.get(i).isPotentDangerous()) {
+                        busqueda.remove(i);
+                    }
+                }
+            }
+        }
+        if (neighborhood != null) {
+            if (species == null && sex == null && size == null && neighborhood == null) {
+                for (int i = 0; i < animales.size(); i++) {
+                    if (neighborhood.equals(animales.get(i).getNeighborhood()) == true) {
+                        busqueda.add(animales.get(i));
+                    }
+                }
+            } else {
+                for (int i = 0; i < busqueda.size(); i++) {
 
+                    if (neighborhood.equals(busqueda.get(i).getNeighborhood()) == false) {
 
-    }
+                        busqueda.remove(i);
 
-    public void modificarPotentDangerous(String id, String nuevoPt) {
+                    }
+                }
+            }
+        }
+        if (position != null) {
 
+            if (position.equals("TOP") == true) {
 
-    }
+                for (int i = 0; i < busqueda.size(); i++) {
+                    System.out.println(busqueda.get(i));
+                }
 
-    public void eliminarMascota(String id) {
+            } else {
+                for (int i = busqueda.size() - 1; i >= 0; i--) {
 
-    }
+                    System.out.println(busqueda.add(busqueda.get(i)));
 
-    public void añadirMascota(String id) {
+                }
 
+            }
+        } else {
+            System.out.println("Debe indicar el orden para mostrar los datos: TOP| LAST");
+        }
+
+        return busqueda;
     }
 
 
