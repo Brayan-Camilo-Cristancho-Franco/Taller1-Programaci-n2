@@ -12,7 +12,10 @@ public class ManagerDao {
     public static void main(String[] args) throws IOException, EmptyAttributeException {
 
         ManagerDao ma = new ManagerDao();
-        ma.assingId();
+        //System.out.println("las localidades correctas son: USAQUEN");
+        ma.countByNeighborhoo("USAQUEN");
+        //ma.countBySpecies();
+        //ma.assingId();
 
     }
 
@@ -86,30 +89,6 @@ public class ManagerDao {
             System.out.println(animales.get(i).getId());
         }
     }
-    //for (int i = 0; i < animales.size(); i++) {
-    //  for (int j = i + 1; j < animales.size(); j++) {
-    //    try {
-    //      System.out.println(cont + "eeeeeeeeeeeeeeee");
-    //    if (animales.get(i).getId().equals(animales.get(j).getId()) == true) {
-    //      cont++;
-    //}
-
-    //if (cont > 1) {
-    //  cont = 0;
-    //throw new IdentifierExistsException();
-
-    //}
-
-
-    //} catch (IdentifierExistsException e) {
-
-    //  System.out.println(animales.get(i).getId() + "El id ya ha sido generado" + animales.get(j).getId());
-
-
-    //}
-    //}
-
-    //}
 
 
     public AnimalesDto findByMicrochip(Long microchip) {
@@ -133,28 +112,52 @@ public class ManagerDao {
         return mascota;
     }
 
-    public void countBySpecies(String especie) {
+    public void countBySpecies() throws EmptyAttributeException, IOException {
+        animales = operacion.leerCsv();
+        String especie = null;
+        int contcan = 0, contfel = 0;
+        especie = animales.get(0).getSpecies();
+        for (int i = 0; i < animales.size(); i++) {
+
+            if (animales.get(i).getSpecies().equals(especie) == true) {
+
+                contfel++;
+            } else {
+                especie = animales.get(i).getSpecies();
+                contcan++;
+            }
+        }
+
+        System.out.println("Los " + especie + "S son: " + contcan);
+        System.out.println("Los " + animales.get(0).getSpecies() + "S son: " + contfel);
+    }
+
+    public void countByNeighborhoo(String neighborhoo) throws EmptyAttributeException, IOException {
+
+        animales = operacion.leerCsv();
+        int cont = 0;
+        boolean aux = false;
+
 
         for (int i = 0; i < animales.size(); i++) {
-            especie = animales.get(i).getSpecies();
-            if (animales.get(i).getSpecies().equals(especie)==true) {
 
-
-            }else{
-                especie=animales.get(i).getSpecies();
-
+            if (neighborhoo.equals(animales.get(i).getNeighborhood()) == true) {
+                aux = true;
+                cont++;
             }
+        }
+        if (aux == false) {
+
+            System.out.println("La localidad no está bien escrita o no está dentro de la lista");
+        }else{
+
+            System.out.println(neighborhoo+" son:"+cont);
         }
 
 
     }
 
-    public void modificarSpecies(String id, String nuevoEs) {
-
-
-    }
-
-    public void modificarSex(String id, String nuevoSex) {
+    public void findByMultipleFields(String id) {
 
 
     }
