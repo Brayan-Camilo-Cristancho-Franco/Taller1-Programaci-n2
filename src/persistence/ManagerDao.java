@@ -78,11 +78,11 @@ public class ManagerDao {
                 }
 
             }
-            cont=0;
+            cont = 0;
         }
         System.out.println("Proceso terminado");
 
-        for (int i=0;i<animales.size();i++){
+        for (int i = 0; i < animales.size(); i++) {
             System.out.println(animales.get(i).getId());
         }
     }
@@ -112,12 +112,39 @@ public class ManagerDao {
     //}
 
 
-    public ArrayList<AnimalesDto> buscarMascota(String alias) {
+    public AnimalesDto findByMicrochip(Long microchip) {
 
-        return animales;
+        AnimalesDto mascota = null;
+        boolean aux = false;
+
+        for (int i = 0; i < animales.size(); i++) {
+            if (microchip == animales.get(i).getMicrochip()) {
+                mascota = animales.get(i);
+                i = animales.size();
+                aux = true;
+            }
+
+        }
+        if (aux == false) {
+            System.out.println("Mascota no encontrada");
+        }
+
+
+        return mascota;
     }
 
-    public void modificarMicrochip(String id, String nuevoChip) {
+    public void countBySpecies(String especie) {
+
+        for (int i = 0; i < animales.size(); i++) {
+            especie = animales.get(i).getSpecies();
+            if (animales.get(i).getSpecies().equals(especie)==true) {
+
+
+            }else{
+                especie=animales.get(i).getSpecies();
+
+            }
+        }
 
 
     }
