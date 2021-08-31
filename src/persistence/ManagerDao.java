@@ -6,30 +6,35 @@ import edu.unbosque.model.IdentifierExistsException;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
 
 public class ManagerDao {
 
-    public static void main(String[] args) throws IOException, EmptyAttributeException {
+    private ArrayList<AnimalesDto> animales = new ArrayList<>();
+    private OperacionArchivo operacion;
+
+    public static void main(String[] args) {
 
         ManagerDao ma = new ManagerDao();
         //System.out.println("las localidades correctas son: USAQUEN");
         //ma.countByNeighborhoo("USAQUEN");
         //ma.countBySpecies();
         //ma.assingId();
-        ma.findByMultipleFields(20, "TOP", null, "HEMBRA", null, null, "USAQUEN");
+        //ma.findByMultipleFields(20, "TOP", "CANINO", "MACHO", "MEDIANO", true, "USAQUEN");
 
+        ma.findByMicrochip(900113000007963l);
     }
 
-    private ArrayList<AnimalesDto> animales = new ArrayList<>();
 
-    private OperacionArchivo operacion;
 
     public ManagerDao() {
         animales = new ArrayList<>();
         operacion = new OperacionArchivo();
     }
 
-    public void assingId() throws EmptyAttributeException, IOException {
+    public void assingId() throws IOException {
         animales = operacion.leerCsv();
         String id = "";
         String newid;
@@ -37,14 +42,10 @@ public class ManagerDao {
         char c, d;
         System.out.println("Asignando id");
         for (int i = 0; i < animales.size(); i++) {
-
             if (animales.get(i).getSize() == "MUY GRANDE") {
                 animales.get(i).setSize("GRANDE");
             }
-
-
             id = String.valueOf(animales.get(i).getMicrochip()).charAt(String.valueOf(animales.get(i).getMicrochip()).length() - 2) + "" + String.valueOf(animales.get(i).getMicrochip()).charAt(String.valueOf(animales.get(i).getMicrochip()).length() - 1) + "-" + animales.get(i).getSpecies().charAt(0) + animales.get(i).getSex().charAt(0) + animales.get(i).getSize().charAt(0) + String.valueOf(animales.get(i).isPotentDangerous());
-
             if (id.charAt(6) == 't') {
 
                 id = id.replace("t", "T");
@@ -92,28 +93,20 @@ public class ManagerDao {
     }
 
 
-    public AnimalesDto findByMicrochip(Long microchip) {
-
-        AnimalesDto mascota = null;
-        boolean aux = false;
-
-        for (int i = 0; i < animales.size(); i++) {
-            if (microchip == animales.get(i).getMicrochip()) {
-                mascota = animales.get(i);
-                i = animales.size();
-                aux = true;
-            }
-
+    public AnimalesDto findByMicrochip(long microchip) {
+        AnimalesDto mascota = new AnimalesDto();
+        int i = 0;
+        for (AnimalesDto animale : animales) {
+            System.out.println(microchip);
+            mascota = animales.get(i);
+            i = animales.size();
+            i++;
         }
-        if (aux == false) {
-            System.out.println("Mascota no encontrada");
-        }
-
-
+        System.out.println(mascota);
         return mascota;
     }
 
-    public void countBySpecies() throws EmptyAttributeException, IOException {
+    public void countBySpecies() throws IOException {
         animales = operacion.leerCsv();
         String especie = null;
         int contcan = 0, contfel = 0;
@@ -133,36 +126,27 @@ public class ManagerDao {
         System.out.println("Los " + animales.get(0).getSpecies() + "S son: " + contfel);
     }
 
-    public void countByNeighborhoo(String neighborhoo) throws EmptyAttributeException, IOException {
-
+    public void countByNeighborhood(String neighborhoo) throws EmptyAttributeException, IOException {
         animales = operacion.leerCsv();
         int cont = 0;
         boolean aux = false;
 
-
         for (int i = 0; i < animales.size(); i++) {
-
             if (neighborhoo.equals(animales.get(i).getNeighborhood()) == true) {
                 aux = true;
                 cont++;
             }
         }
         if (aux == false) {
-
             System.out.println("La localidad no está bien escrita o no está dentro de la lista");
         } else {
-
             System.out.println(neighborhoo + " son:" + cont);
         }
-
-
     }
 
-    public ArrayList<AnimalesDto> findByMultipleFields(int n, String position, String species, String sex, String size, Boolean potentDangerous, String neighborhood) throws EmptyAttributeException, IOException {
+    public ArrayList<AnimalesDto> findByMultipleFields(int n, String position, String species, String sex, String size, boolean potentDangerous, String neighborhood) throws EmptyAttributeException, IOException {
         animales = operacion.leerCsv();
         ArrayList<AnimalesDto> busqueda = new ArrayList<>();
-
-
         if (species != null) {
             for (int i = 0; i < animales.size(); i++) {
                 if (species.equals(animales.get(i).getSpecies()) == true) {
@@ -170,6 +154,7 @@ public class ManagerDao {
                 }
             }
         }
+
         if (sex != null) {
             if (species == null) {
                 for (int i = 0; i < animales.size(); i++) {
@@ -177,7 +162,6 @@ public class ManagerDao {
                         busqueda.add(animales.get(i));
                     }
                 }
-
             } else {
                 for (int i = 0; i < busqueda.size(); i++) {
                     if (sex.equals(busqueda.get(i).getSex()) == false) {
@@ -186,6 +170,7 @@ public class ManagerDao {
                 }
             }
         }
+
         if (size != null) {
             if (species == null && sex == null) {
                 for (int i = 0; i < animales.size(); i++) {
@@ -201,7 +186,8 @@ public class ManagerDao {
                 }
             }
         }
-        if (potentDangerous != null) {
+
+        if (!String.valueOf(potentDangerous).isBlank()) {
             if (species == null && sex == null && size == null) {
                 for (int i = 0; i < animales.size(); i++) {
                     if (potentDangerous == animales.get(i).isPotentDangerous()) {
@@ -216,6 +202,7 @@ public class ManagerDao {
                 }
             }
         }
+
         if (neighborhood != null) {
             if (species == null && sex == null && size == null && neighborhood == null) {
                 for (int i = 0; i < animales.size(); i++) {
@@ -225,33 +212,32 @@ public class ManagerDao {
                 }
             } else {
                 for (int i = 0; i < busqueda.size(); i++) {
-
                     if (neighborhood.equals(busqueda.get(i).getNeighborhood()) == false) {
-
                         busqueda.remove(i);
-
                     }
                 }
             }
         }
+
         if (position != null) {
-
             if (position.equals("TOP") == true) {
-
                 for (int i = 0; i < busqueda.size(); i++) {
                     System.out.println(busqueda.get(i));
                 }
-
             } else {
                 for (int i = busqueda.size() - 1; i >= 0; i--) {
-
                     System.out.println(busqueda.add(busqueda.get(i)));
-
                 }
-
             }
         } else {
             System.out.println("Debe indicar el orden para mostrar los datos: TOP| LAST");
+        }
+        if (String.valueOf(n) != null) {
+            busqueda = (ArrayList<AnimalesDto>) busqueda.subList(0, n);
+            Iterator iter = busqueda.iterator();
+            while (iter.hasNext()){
+                return busqueda;
+            }
         }
 
         return busqueda;

@@ -8,7 +8,9 @@ import java.util.ArrayList;
 
 public class OperacionArchivo {
 
-    public static void main(String[] args) throws IOException, NumberFormatException, EmptyAttributeException {
+    private static final String csvfile = "./Data/pets-citizens.csv";
+
+    public static void main(String[] args) throws IOException, NumberFormatException {
 
         OperacionArchivo op = new OperacionArchivo();
 
@@ -18,11 +20,7 @@ public class OperacionArchivo {
         }
     }
 
-    private ObjectInputStream recuperar;
-    private ObjectOutputStream escribir;
-
-
-    public ArrayList<AnimalesDto> leerCsv() throws IOException, NumberFormatException, EmptyAttributeException {
+    public ArrayList<AnimalesDto> leerCsv() throws IOException, NumberFormatException {
 
         ArrayList<AnimalesDto> animales = new ArrayList<>();
         BufferedReader lectura = null;
@@ -31,7 +29,7 @@ public class OperacionArchivo {
         try {
 
 
-            lectura = new BufferedReader(new FileReader("./Data/pets-citizens.csv"));
+            lectura = new BufferedReader(new FileReader(csvfile));
             String linea = lectura.readLine();
             int cont = 0;
 
