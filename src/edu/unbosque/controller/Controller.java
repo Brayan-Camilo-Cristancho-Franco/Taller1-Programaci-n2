@@ -1,11 +1,12 @@
 package edu.unbosque.controller;
 
 import edu.unbosque.model.EmptyAttributeException;
-import edu.unbosque.model.Mundo;
+import edu.unbosque.persistence.ManagerDao;
 import edu.unbosque.view.ViewConsola;
-import persistence.ManagerDao;
+
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Controller {
 
@@ -20,29 +21,59 @@ public class Controller {
 
     public void ui() throws EmptyAttributeException, IOException {
         int opcion = 0;
-        do{
+        do {
             opcion = Integer.parseInt(view.leerDato("Selecione una opcion:\n" +
-                    "1. Buscar por microchip\n" +
-                    "2. Contar por especie\n" +
-                    "3. Contar por localidad\n" +
-                    "4. Buscar...\n\n"));
-            switch (opcion){
+                    "1. Asignar id\n" +
+                    "2. Buscar por microchip\n" +
+                    "3. Contar por especie\n" +
+                    "4. Contar por localidad\n" +
+                    "5. Buscar...\n\n"));
+            switch (opcion) {
                 case 1:
-                    long microchip = 0;
-                    microchip = Long.parseLong(view.leerDato("Ingrese el microchip de su animal: "));
-                    man.findByMicrochip(microchip);
+                    man.assingId();
                     break;
                 case 2:
+                    long microchip = 0;
+                    microchip = Long.parseLong(view.leerDato("Ingrese el microchip de su animal: "));
+                    System.out.println(man.findByMicrochip(microchip));
+                    break;
+                case 3:
                     System.out.println("Se muestra la cantidad de especies.");
                     man.countBySpecies();
                     break;
-                case 3:
+                case 4:
                     String neighborhood = "";
                     neighborhood = view.leerDato("Escribe la localidad");
                     man.countByNeighborhood(neighborhood);
                     break;
-                case 4:
+                case 5:
+
+                    System.out.println("Por favor rellene los campos de busqueda que considere necesarios");
+                    System.out.println("Número de elementos a mostrar");
+                    String n = "";
+                    view.leerDato(n);
+                    System.out.println("Orden especifico, escriba TOP O LAST en el mismo formato ");
+                    String position = "";
+                    view.leerDato(position);
+                    System.out.println("Escriba la especie");
+                    String species = "";
+                    view.leerDato(species);
+                    System.out.println("Escriba el sexo");
+                    String sex = "";
+                    view.leerDato(sex);
+                    System.out.println("Escriba el tamaño");
+                    String size = "";
+                    view.leerDato(size);
+                    System.out.println("Escriba si es una especie peligrosa true o false en este formato");
+                    String potentDangerous = "";
+                    view.leerDato(potentDangerous);
+                    System.out.println("Escriba la localidad");
+                    String localidad = "";
+                    view.leerDato(localidad);
+
+                    man.findByMultipleFields(Integer.parseInt(n), position, species, sex, size, Boolean.parseBoolean(potentDangerous), localidad);
                     break;
+
             }
         } while (opcion != 0);
     }

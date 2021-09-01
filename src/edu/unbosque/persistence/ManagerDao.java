@@ -37,7 +37,7 @@ public class ManagerDao {
         String newid;
         int cont = 0;
         char c, d;
-        System.out.println("Asignando id ...");
+        System.out.println("Asignando id por favor espere ...");
         for (int i = 0; i < animales.size(); i++) {
 
             if (animales.get(i).getSize() == "MUY GRANDE") {
@@ -134,7 +134,7 @@ public class ManagerDao {
         System.out.println("Los " + animales.get(0).getSpecies() + "S son: " + contfel);
     }
 
-    public void countByNeighborhoo(String neighborhoo) throws EmptyAttributeException, IOException {
+    public void countByNeighborhood(String neighborhoo) throws EmptyAttributeException, IOException {
 
 
         int cont = 0;
