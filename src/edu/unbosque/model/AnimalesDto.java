@@ -11,7 +11,7 @@ public class AnimalesDto {
     private String neighborhood;
 
     public  AnimalesDto(){
-
+;
     }
 
     public AnimalesDto(String id, long microchip, String species, String sex, String size, boolean potentDangerous, String neighborhood) {
