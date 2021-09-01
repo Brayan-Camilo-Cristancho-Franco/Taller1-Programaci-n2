@@ -1,6 +1,6 @@
-package persistence;
+package edu.unbosque.persistence;
 
-import edu.unbosque.AnimalesDto;
+import edu.unbosque.model.AnimalesDto;
 import edu.unbosque.model.EmptyAttributeException;
 import edu.unbosque.model.IdentifierExistsException;
 
@@ -16,7 +16,7 @@ public class ManagerDao {
         //ma.countByNeighborhoo("USAQUEN");
         //ma.countBySpecies();
         //ma.assingId();
-        ma.findByMultipleFields(20, null, null, null, null, Boolean.parseBoolean(""), null);
+        ma.findByMultipleFields(20, "LAST", null, null, "GRANDE", Boolean.parseBoolean("true"), null);
         //  System.out.println(ma.findByMicrochip(97810108191876l));
 
     }
@@ -25,9 +25,10 @@ public class ManagerDao {
 
     private OperacionArchivo operacion;
 
-    public ManagerDao() {
+    public ManagerDao() throws EmptyAttributeException, IOException {
         animales = new ArrayList<>();
         operacion = new OperacionArchivo();
+        animales=operacion.leerCsv();
     }
 
     public void assingId() throws EmptyAttributeException, IOException {
@@ -36,7 +37,7 @@ public class ManagerDao {
         String newid;
         int cont = 0;
         char c, d;
-        System.out.println("Asignando id");
+        System.out.println("Asignando id ...");
         for (int i = 0; i < animales.size(); i++) {
 
             if (animales.get(i).getSize() == "MUY GRANDE") {
@@ -64,7 +65,7 @@ public class ManagerDao {
             animales.get(i).setId(id);
             cont = 0;
         }
-        System.out.println(id);
+
         for (int a = 1; a < animales.size(); a++) {
             for (int j = a - 1; j >= 0; j--) {
                 try {
@@ -87,15 +88,12 @@ public class ManagerDao {
         }
         System.out.println("Proceso terminado");
 
-        for (int i = 0; i < animales.size(); i++) {
-            System.out.println(animales.get(i).getId());
-        }
     }
 
 
     public AnimalesDto findByMicrochip(long microchip) throws EmptyAttributeException, IOException {
 
-        animales = operacion.leerCsv();
+
 
         AnimalesDto mascota = null;
         boolean aux = false;
@@ -117,7 +115,7 @@ public class ManagerDao {
     }
 
     public void countBySpecies() throws EmptyAttributeException, IOException {
-        animales = operacion.leerCsv();
+
         String especie = null;
         int contcan = 0, contfel = 0;
         especie = animales.get(0).getSpecies();
@@ -138,7 +136,7 @@ public class ManagerDao {
 
     public void countByNeighborhoo(String neighborhoo) throws EmptyAttributeException, IOException {
 
-        animales = operacion.leerCsv();
+
         int cont = 0;
         boolean aux = false;
 
@@ -162,7 +160,7 @@ public class ManagerDao {
     }
 
     public void findByMultipleFields(int n, String position, String species, String sex, String size, boolean potentDangerous, String neighborhood) throws EmptyAttributeException, IOException {
-        animales = operacion.leerCsv();
+
         ArrayList<AnimalesDto> busqueda = new ArrayList<>();
 
 
@@ -243,12 +241,12 @@ public class ManagerDao {
 
             if (position.equals("TOP") == true) {
 
-                for (int i = 0; i < busqueda.size(); i++) {
+                for (int i = 0; i < n; i++) {
                     System.out.println(busqueda.get(i));
                 }
 
             } else {
-                for (int i = busqueda.size() - 1; i >= 0; i--) {
+                for (int i = busqueda.size() - 1; i >= (busqueda.size()-n); i--) {
 
                     System.out.println(busqueda.get(i));
 

@@ -1,6 +1,6 @@
-package persistence;
+package edu.unbosque.persistence;
 
-import edu.unbosque.AnimalesDto;
+import edu.unbosque.model.AnimalesDto;
 import edu.unbosque.model.EmptyAttributeException;
 
 import java.io.*;
@@ -8,9 +8,7 @@ import java.util.ArrayList;
 
 public class OperacionArchivo {
 
-    private static final String csvfile = "./Data/pets-citizens.csv";
-
-    public static void main(String[] args) throws IOException, NumberFormatException {
+    public static void main(String[] args) throws IOException, NumberFormatException, EmptyAttributeException {
 
         OperacionArchivo op = new OperacionArchivo();
 
@@ -20,16 +18,17 @@ public class OperacionArchivo {
         }
     }
 
-    public ArrayList<AnimalesDto> leerCsv() throws IOException, NumberFormatException {
+
+    public ArrayList<AnimalesDto> leerCsv() throws IOException, NumberFormatException, EmptyAttributeException {
 
         ArrayList<AnimalesDto> animales = new ArrayList<>();
         BufferedReader lectura = null;
         ArrayList<String> noreg = new ArrayList<String>();
-        int i = 0;
+
         try {
 
 
-            lectura = new BufferedReader(new FileReader(csvfile));
+            lectura = new BufferedReader(new FileReader("./Data/pets-citizens.csv"));
             String linea = lectura.readLine();
             int cont = 0;
 
@@ -48,10 +47,9 @@ public class OperacionArchivo {
                     } else {
                         temp[4] = "false";
                     }
-                    animales.add(new AnimalesDto(String.valueOf(i), Long.parseLong(temp[0]), temp[1], temp[2], temp[3], Boolean.parseBoolean(temp[4]), temp[5]));
+                    animales.add(new AnimalesDto("NO ASIGNADO", Long.parseLong(temp[0]), temp[1], temp[2], temp[3], Boolean.parseBoolean(temp[4]), temp[5]));
 
                     linea = lectura.readLine();
-                    // try {
 
 
                 } catch (NumberFormatException | EmptyAttributeException e) {
@@ -62,16 +60,10 @@ public class OperacionArchivo {
                 }
 
 
-                i++;
-
             }
 
             lectura.close();
 
-            //System.out.println("Los animales no registrados fueron: \n ");
-            //for (int j = 0; j < noreg.size(); j++) {
-            //    System.out.println(noreg.get(j) + "\n");
-            //}
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -81,6 +73,26 @@ public class OperacionArchivo {
         }
 
     }
+
+    public int escribir(ArrayList<AnimalesDto> animales) {
+        File f = new File("./Data/pets-citizens.csv");
+        try {
+            FileWriter fw = new FileWriter(f);
+            PrintWriter pw = new PrintWriter(fw);
+
+            pw.println(animales);
+
+            fw.close();
+
+        } catch (IOException e) {
+            return -1;
+
+        }
+        return 0;
+
+
+    }
+
 
 }
 

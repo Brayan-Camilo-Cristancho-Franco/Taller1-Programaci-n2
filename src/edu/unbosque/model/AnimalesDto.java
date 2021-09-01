@@ -1,4 +1,4 @@
-package edu.unbosque;
+package edu.unbosque.model;
 
 public class AnimalesDto {
 
