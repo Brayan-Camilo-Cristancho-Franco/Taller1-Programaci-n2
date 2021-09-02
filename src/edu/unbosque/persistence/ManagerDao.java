@@ -16,7 +16,7 @@ public class ManagerDao {
         //ma.countByNeighborhoo("USAQUEN");
         //ma.countBySpecies();
         //ma.assingId();
-        ma.findByMultipleFields(20, "LAST", null, null, "GRANDE", Boolean.parseBoolean("true"), null);
+        //ma.findByMultipleFields(20, "LAST", null, null, "GRANDE", Boolean.parseBoolean("true"), null);
         //  System.out.println(ma.findByMicrochip(97810108191876l));
 
     }

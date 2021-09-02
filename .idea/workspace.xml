@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="75a34441-eaee-4d5f-96ef-9d23c21d4cb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_09_2021_10_21_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_09_2021_10_21_p__m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_09_2021_10_21_p__m___Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_09_2021_10_21_p__m___Changes_1.xml" afterDir="false" />
+    <list default="true" id="75a34441-eaee-4d5f-96ef-9d23c21d4cb0" name="Changes" comment="Cambios finales">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/unbosque/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/unbosque/persistence/ManagerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/persistence/ManagerDao.java" afterDir="false" />
@@ -24,6 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="BrayanCristancho" />
@@ -102,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630553611676</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Cambios finales">
+      <created>1630555251839</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1630555251839</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

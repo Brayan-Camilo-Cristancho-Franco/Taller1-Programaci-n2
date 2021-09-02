@@ -52,26 +52,29 @@ public class Controller {
                     String species = "";
                     String sex = "";
                     String size = "";
-                    String potentDangerous = "";
+                    boolean potentDangerous;
                     String localidad = "";
 
                     System.out.println("Por favor rellene los campos de busqueda que considere necesarios");
+                    try{
+                        n = view.leerDato("Número de elementos a mostrar");
 
-                    n = view.leerDato("Número de elementos a mostrar");
+                        position = view.leerDato("Orden especifico, escriba TOP O LAST en el mismo formato ");
 
-                    position = view.leerDato("Orden especifico, escriba TOP O LAST en el mismo formato ");
+                        species = view.leerDato("Escriba la especie");
 
-                    species = view.leerDato("Escriba la especie");
+                        sex = view.leerDato("Escriba el sexo");
 
-                    sex = view.leerDato("Escriba el sexo");
+                        size = view.leerDato("Escriba el tamaño");
 
-                    size = view.leerDato("Escriba el tamaño");
+                        potentDangerous = Boolean.parseBoolean(view.leerDato("Escriba si es una especie peligrosa true o false en este formato"));
 
-                    potentDangerous = view.leerDato("Escriba si es una especie peligrosa true o false en este formato");
+                        localidad = view.leerDato("Escriba la localidad");
 
-                    localidad = view.leerDato("Escriba la localidad");
-
-                    man.findByMultipleFields(Integer.parseInt(n), position, species, sex, size, Boolean.parseBoolean(potentDangerous), localidad);
+                        man.findByMultipleFields(Integer.parseInt(n), position, species, sex, size, potentDangerous, localidad);
+                    } catch (IndexOutOfBoundsException e){
+                        System.out.println("No hay mas lineas que mostrar");
+                    }
                     break;
 
             }
