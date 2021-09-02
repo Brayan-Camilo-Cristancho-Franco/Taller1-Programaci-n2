@@ -9,17 +9,7 @@ import java.util.ArrayList;
 
 public class ManagerDao {
 
-    public static void main(String[] args) throws IOException, EmptyAttributeException {
 
-        ManagerDao ma = new ManagerDao();
-        //System.out.println("las localidades correctas son: USAQUEN");
-        //ma.countByNeighborhoo("USAQUEN");
-        //ma.countBySpecies();
-        //ma.assingId();
-        //ma.findByMultipleFields(20, "LAST", null, null, "GRANDE", Boolean.parseBoolean("true"), null);
-        //  System.out.println(ma.findByMicrochip(97810108191876l));
-
-    }
 
     private ArrayList<AnimalesDto> animales = new ArrayList<>();
 
