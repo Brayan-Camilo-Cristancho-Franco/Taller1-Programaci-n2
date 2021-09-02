@@ -47,35 +47,29 @@ public class Controller {
                     man.countByNeighborhood(neighborhood);
                     break;
                 case 5:
+                    String n = "";
+                    String position = "";
+                    String species = "";
+                    String sex = "";
+                    String size = "";
+                    String potentDangerous = "";
+                    String localidad = "";
 
                     System.out.println("Por favor rellene los campos de busqueda que considere necesarios");
-                    System.out.println("Número de elementos a mostrar");
-                    String n = "";
-                    n = view.leerDato(n);
 
-                    System.out.println("Orden especifico, escriba TOP O LAST en el mismo formato ");
-                    String position = "";
-                    position = view.leerDato(position);
+                    n = view.leerDato("Número de elementos a mostrar");
 
-                    System.out.println("Escriba la especie");
-                    String species = "";
-                    species = view.leerDato(species);
+                    position = view.leerDato("Orden especifico, escriba TOP O LAST en el mismo formato ");
 
-                    System.out.println("Escriba el sexo");
-                    String sex = "";
-                    sex = view.leerDato(sex);
+                    species = view.leerDato("Escriba la especie");
 
-                    System.out.println("Escriba el tamaño");
-                    String size = "";
-                    size = view.leerDato(size);
+                    sex = view.leerDato("Escriba el sexo");
 
-                    System.out.println("Escriba si es una especie peligrosa true o false en este formato");
-                    String potentDangerous = "";
-                    potentDangerous = view.leerDato(potentDangerous);
+                    size = view.leerDato("Escriba el tamaño");
 
-                    System.out.println("Escriba la localidad");
-                    String localidad = "";
-                    localidad = view.leerDato(localidad);
+                    potentDangerous = view.leerDato("Escriba si es una especie peligrosa true o false en este formato");
+
+                    localidad = view.leerDato("Escriba la localidad");
 
                     man.findByMultipleFields(Integer.parseInt(n), position, species, sex, size, Boolean.parseBoolean(potentDangerous), localidad);
                     break;

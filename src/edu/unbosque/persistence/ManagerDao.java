@@ -239,7 +239,7 @@ public class ManagerDao {
         }
         if (position != null) {
 
-            if (position.equals("TOP") == true) {
+            if (position.equals("TOP")) {
 
                 for (int i = 0; i < n; i++) {
                     System.out.println(busqueda.get(i));
