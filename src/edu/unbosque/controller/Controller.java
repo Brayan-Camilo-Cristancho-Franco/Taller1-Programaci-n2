@@ -51,25 +51,31 @@ public class Controller {
                     System.out.println("Por favor rellene los campos de busqueda que considere necesarios");
                     System.out.println("Número de elementos a mostrar");
                     String n = "";
-                    view.leerDato(n);
+                    n = view.leerDato(n);
+
                     System.out.println("Orden especifico, escriba TOP O LAST en el mismo formato ");
                     String position = "";
-                    view.leerDato(position);
+                    position = view.leerDato(position);
+
                     System.out.println("Escriba la especie");
                     String species = "";
-                    view.leerDato(species);
+                    species = view.leerDato(species);
+
                     System.out.println("Escriba el sexo");
                     String sex = "";
-                    view.leerDato(sex);
+                    sex = view.leerDato(sex);
+
                     System.out.println("Escriba el tamaño");
                     String size = "";
-                    view.leerDato(size);
+                    size = view.leerDato(size);
+
                     System.out.println("Escriba si es una especie peligrosa true o false en este formato");
                     String potentDangerous = "";
-                    view.leerDato(potentDangerous);
+                    potentDangerous = view.leerDato(potentDangerous);
+
                     System.out.println("Escriba la localidad");
                     String localidad = "";
-                    view.leerDato(localidad);
+                    localidad = view.leerDato(localidad);
 
                     man.findByMultipleFields(Integer.parseInt(n), position, species, sex, size, Boolean.parseBoolean(potentDangerous), localidad);
                     break;

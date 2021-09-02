@@ -22,7 +22,6 @@ public class AnimalesDto {
         this.size = size;
         this.potentDangerous = potentDangerous;
         this.neighborhood = neighborhood;
-
     }
 
     @Override
