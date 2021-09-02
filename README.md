@@ -1,1 +1,5 @@
-# Taller1-Programaci-n2
+# Taller1-Programacion2
+Integrantes:
+- Jorge Luis Garcia
+- David Millan
+- Brayan Cristancho
