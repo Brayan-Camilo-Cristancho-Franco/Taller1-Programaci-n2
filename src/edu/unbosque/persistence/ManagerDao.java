@@ -9,17 +9,7 @@ import java.util.ArrayList;
 
 public class ManagerDao {
 
-    public static void main(String[] args) throws IOException, EmptyAttributeException {
 
-        ManagerDao ma = new ManagerDao();
-        //System.out.println("las localidades correctas son: USAQUEN");
-        //ma.countByNeighborhoo("USAQUEN");
-        //ma.countBySpecies();
-        //ma.assingId();
-        ma.findByMultipleFields(20, "LAST", null, null, "GRANDE", Boolean.parseBoolean("true"), null);
-        //  System.out.println(ma.findByMicrochip(97810108191876l));
-
-    }
 
     private ArrayList<AnimalesDto> animales = new ArrayList<>();
 
@@ -28,7 +18,7 @@ public class ManagerDao {
     public ManagerDao() throws EmptyAttributeException, IOException {
         animales = new ArrayList<>();
         operacion = new OperacionArchivo();
-        animales=operacion.leerCsv();
+        animales = operacion.leerCsv();
     }
 
     public void assingId() throws EmptyAttributeException, IOException {
@@ -92,7 +82,6 @@ public class ManagerDao {
 
 
     public AnimalesDto findByMicrochip(long microchip) throws EmptyAttributeException, IOException {
-
 
 
         AnimalesDto mascota = null;
@@ -180,7 +169,7 @@ public class ManagerDao {
                 }
 
             } else {
-                for (int i =busqueda.size()-1; i>=0; i--) {
+                for (int i = busqueda.size() - 1; i >= 0; i--) {
                     if (sex.equals(busqueda.get(i).getSex()) == false) {
                         busqueda.remove(i);
                     }
@@ -195,7 +184,7 @@ public class ManagerDao {
                     }
                 }
             } else {
-                for (int i =busqueda.size()-1; i>=0; i--) {
+                for (int i = busqueda.size() - 1; i >= 0; i--) {
                     if (size.equals(busqueda.get(i).getSize()) == false) {
                         busqueda.remove(i);
                     }
@@ -210,7 +199,7 @@ public class ManagerDao {
                     }
                 }
             } else {
-                for (int i =busqueda.size()-1; i>=0; i--) {
+                for (int i = busqueda.size() - 1; i >= 0; i--) {
                     if (potentDangerous != busqueda.get(i).isPotentDangerous()) {
                         busqueda.remove(i);
                     }
@@ -226,7 +215,7 @@ public class ManagerDao {
                 }
             } else {
 
-                for (int i =busqueda.size()-1; i>=0; i--) {
+                for (int i = busqueda.size() - 1; i >= 0; i--) {
 
                     if (neighborhood.equals(busqueda.get(i).getNeighborhood()) == false) {
 
@@ -246,7 +235,7 @@ public class ManagerDao {
                 }
 
             } else {
-                for (int i = busqueda.size() - 1; i >= (busqueda.size()-n); i--) {
+                for (int i = busqueda.size() - 1; i >= (busqueda.size() - n); i--) {
 
                     System.out.println(busqueda.get(i));
 

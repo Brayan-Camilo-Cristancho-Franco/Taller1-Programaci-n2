@@ -20,4 +20,9 @@ public class ViewConsola {
         dato = leer.nextLine();
         return dato;
     }
+    public String leerdatos (String dato) {
+        Scanner sc = new Scanner(System.in);
+        dato = sc.next();
+        return dato;
+    }
 }

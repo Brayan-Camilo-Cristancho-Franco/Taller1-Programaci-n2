@@ -16,6 +16,7 @@ public class Controller {
     Controller() throws EmptyAttributeException, IOException {
         man = new ManagerDao();
         view = new ViewConsola();
+
         ui();
     }
 
@@ -48,36 +49,7 @@ public class Controller {
                     break;
                 case 5:
 
-                    System.out.println("Por favor rellene los campos de busqueda que considere necesarios");
-                    System.out.println("Número de elementos a mostrar");
-                    String n = "";
-                    n = view.leerDato(n);
-
-                    System.out.println("Orden especifico, escriba TOP O LAST en el mismo formato ");
-                    String position = "";
-                    position = view.leerDato(position);
-
-                    System.out.println("Escriba la especie");
-                    String species = "";
-                    species = view.leerDato(species);
-
-                    System.out.println("Escriba el sexo");
-                    String sex = "";
-                    sex = view.leerDato(sex);
-
-                    System.out.println("Escriba el tamaño");
-                    String size = "";
-                    size = view.leerDato(size);
-
-                    System.out.println("Escriba si es una especie peligrosa true o false en este formato");
-                    String potentDangerous = "";
-                    potentDangerous = view.leerDato(potentDangerous);
-
-                    System.out.println("Escriba la localidad");
-                    String localidad = "";
-                    localidad = view.leerDato(localidad);
-
-                    man.findByMultipleFields(Integer.parseInt(n), position, species, sex, size, Boolean.parseBoolean(potentDangerous), localidad);
+                    man.findByMultipleFields(20, "LAST", null, null, "GRANDE", Boolean.parseBoolean("true"), null);
                     break;
 
             }

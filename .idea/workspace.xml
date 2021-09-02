@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="75a34441-eaee-4d5f-96ef-9d23c21d4cb0" name="Changes" comment="Menu controller">
+    <list default="true" id="1f5e9d18-b755-4f29-a934-5743f8595c48" name="Changes" comment="Version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/edu/unbosque/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/edu/unbosque/model/AnimalesDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/model/AnimalesDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/unbosque/persistence/ManagerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/persistence/ManagerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/unbosque/view/ViewConsola.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/view/ViewConsola.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/unbosque/view/view.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/unbosque/view/view.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +23,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="BrayanCristancho" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -37,11 +37,7 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/edu/unbosque/model/IdentifierExistsException.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/edu/unbosque/model/EmptyAttributeException.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="ProjectId" id="1xSrMn4n6X3T6UCfK7XG26Ui7ne" />
+  <component name="ProjectId" id="1x0u2JHVq66SGuZi5G6s1HGFqB3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -49,6 +45,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="edu.unbosque.model" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sandra-Vaio\git\Taller1-Programacion2\Data" />
+      <recent name="C:\Users\Sandra-Vaio\git\Taller1-Programacion2\doc" />
+      <recent name="C:\Users\Sandra-Vaio\git\Taller1-Programacion2\src" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.AplMain">
     <configuration name="AplMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -65,14 +72,21 @@
       </method>
     </configuration>
     <configuration name="ManagerDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="persistence.ManagerDao" />
+      <option name="MAIN_CLASS_NAME" value="edu.unbosque.persistence.ManagerDao" />
       <module name="Taller1-Programacion2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="persistence.*" />
+          <option name="PATTERN" value="edu.unbosque.persistence.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OperacionArchivo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.unbosque.persistence.OperacionArchivo" />
+      <module name="Taller1-Programacion2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -81,18 +95,125 @@
       <list>
         <item itemvalue="Application.AplMain" />
         <item itemvalue="Application.ManagerDao" />
+        <item itemvalue="Application.OperacionArchivo" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="75a34441-eaee-4d5f-96ef-9d23c21d4cb0" name="Changes" comment="" />
-      <created>1630359301756</created>
+      <changelist id="1f5e9d18-b755-4f29-a934-5743f8595c48" name="Changes" comment="" />
+      <created>1629504129212</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1630359301756</updated>
+      <updated>1629504129212</updated>
     </task>
+    <task id="LOCAL-00001" summary="Version">
+      <created>1629928507066</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1629928507066</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Version">
+      <created>1629989704235</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1629989704235</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Version">
+      <created>1629997044420</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1629997044420</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Version">
+      <created>1630093932300</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1630093932300</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Version">
+      <created>1630335681061</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1630335681061</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Version">
+      <created>1630341993561</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1630341993561</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Version">
+      <created>1630350226066</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1630350226066</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Version">
+      <created>1630528008568</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1630528008568</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Version">
+      <created>1630528156192</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1630528156192</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Version">
+      <created>1630528255071</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1630528255071</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Version">
+      <created>1630528507558</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1630528507558</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Version">
+      <created>1630534077586</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1630534077586</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Version">
+      <created>1630534295090</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1630534295090</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Version">
+      <created>1630534322213</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1630534322213</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Version">
+      <created>1630537202363</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1630537202363</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,5 +227,19 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
