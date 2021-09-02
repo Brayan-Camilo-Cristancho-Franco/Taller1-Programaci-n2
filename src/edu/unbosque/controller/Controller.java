@@ -54,6 +54,6 @@ public class Controller {
 
             }
         } while (opcion != 0);
-    }
+    };
 
 }
